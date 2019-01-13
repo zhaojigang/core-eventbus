@@ -31,7 +31,7 @@ public class EventBus {
             subscribers = new CopyOnWriteArrayList<>();
             EVENT_SUBSCRIBERS.putIfAbsent(eventClass, subscribers);
         }
-        subscribers.addIfAbsent(subscriber);
+        EVENT_SUBSCRIBERS.get(eventClass).addIfAbsent(subscriber);
     }
 
     /**
